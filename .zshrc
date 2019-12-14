@@ -45,12 +45,12 @@ zstyle ':vcs_info:git:*' unstagedstr "%F{yellow}+"
 zstyle ':vcs_info:*' formats "%F{cyan}%c%u[%b]%f"
 zstyle ':vcs_info:*' actionformats '[%b|%a]'
 precmd() { vcs_info }
-PROMPT='%F{blue}%c%f %n %F{red}$%f '
+PROMPT='%F{cyan}%c%f %n %F{magenta}$%f '
 RPROMPT='${vcs_info_msg_0_}'
 
 # alias
 # color
-alias ls='ls -G --color=auto'
+alias ls='ls -G'
 alias ll='ls -al -G'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
@@ -61,6 +61,13 @@ alias mv='mv -i'
 alias vi='vim'
 alias less='less -NM'
 export CLICOLOR=1
+
+# enable brew installed vim
+export PATH="$PATH:/usr/local/Cellar/vim/8.2.0/bin"
+
+# Golang
+export GOPATH=$(go env GOPATH)
+export PATH=$PATH:$GOPATH/bin
 
 # ghq cd with peco
 bindkey '^]' peco-src
@@ -74,3 +81,6 @@ function peco-src() {
 	zle -R -c
 }
 zle -N peco-src
+
+# nodebrew
+export PATH=$PATH:$HOME/.nodebrew/current/bin

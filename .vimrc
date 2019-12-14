@@ -66,7 +66,7 @@ set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 set noswapfile
 
 " ヤンクをクリップボードへ
-set clipboard=unnamedplus
+set clipboard+=unnamed
 
 " no beep
 set belloff=all
@@ -92,15 +92,6 @@ set hlsearch
 " xで削除した時はヤンクしない
 vnoremap x "_x
 nnoremap x "_x
-
-" 括弧の補完
-inoremap {<Enter> {}<Left><CR><ESC><S-o>
-inoremap [<Enter> []<Left><CR><ESC><S-o>
-inoremap (<Enter> ()<Left><CR><ESC><S-o>
-
-" クオーテーションの補完
-inoremap ' ''<LEFT>
-inoremap " ""<LEFT>
 
 " 画面分割系
 nnoremap sj <C-w>j
